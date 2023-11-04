@@ -1,5 +1,5 @@
 {% set name = "orbax-checkpoint" %}
-{% set version = "0.4.1" %}
+{% set version = "0.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/orbax_checkpoint-{{ version }}.tar.gz
-  sha256: 9ed87757966e1d3bf1f20ac9ab39645a7a00263ee0a3a455ab73b0e635a25617
+  sha256: 51a21f0a567bea7a05739054a029cc06d6773ee440dc6e530901d2234283d0d2
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
