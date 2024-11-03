@@ -1,5 +1,5 @@
 {% set name = "orbax-checkpoint" %}
-{% set version = "0.4.4" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/orbax_checkpoint-{{ version }}.tar.gz
-  sha256: 85ab96268b3f39e83809254cb3d55aa5a47c2279d7d3e725bd5f7c2da10a4de9
+  sha256: 0754ecc2e5fc858e62bbcf610606502d8e1c9ada7295d9bb49cc172f884b0b1e
 
 build:
   noarch: python
@@ -16,20 +16,20 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python >=3.10
     - flit-core >=3.5,<4
     - pip
   run:
-    - python >=3.9
+    - python >=3.10
     - absl-py
     - etils
     - typing_extensions
     - msgpack-python
-    - jax >=0.4.9
-    - jaxlib
+    - jaxlib >=0.4.34
+    - jax >=0.4.34
     - numpy
     - pyyaml
-    - tensorstore >=0.1.35
+    - tensorstore >=0.1.60
     - nest-asyncio
     - protobuf
     - importlib_resources
