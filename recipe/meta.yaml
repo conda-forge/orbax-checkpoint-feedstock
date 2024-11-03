@@ -32,6 +32,7 @@ requirements:
     - nest-asyncio
     - protobuf
     - humanize
+    - importlib_resources
 
 test:
   imports:
