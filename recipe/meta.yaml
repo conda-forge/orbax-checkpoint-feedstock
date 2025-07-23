@@ -27,7 +27,7 @@ requirements:
     - etils
     - typing_extensions
     - msgpack-python
-    - jax >=0.4.35
+    - jax >=0.4.35,<0.4.36
     - numpy
     - pyyaml
     - tensorstore >=0.1.68
