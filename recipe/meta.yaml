@@ -1,6 +1,6 @@
 {% set python_min = '3.10' %}
 {% set name = "orbax-checkpoint" %}
-{% set version = "0.6.4" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/orbax_checkpoint-{{ version }}.tar.gz
-  sha256: 366b4d528a7322e1b3d9ddcaed45c8515add0d2fc69c8975c30d98638543240f
+  sha256: 0754ecc2e5fc858e62bbcf610606502d8e1c9ada7295d9bb49cc172f884b0b1e
 
 build:
   noarch: python
@@ -26,7 +26,7 @@ requirements:
     - etils
     - typing_extensions
     - msgpack-python
-    - jax >=0.4.26
+    - jax >=0.4.35
     - numpy
     - pyyaml
     - tensorstore >=0.1.60
