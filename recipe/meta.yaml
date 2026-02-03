@@ -34,7 +34,7 @@ requirements:
     - protobuf
     - humanize
     - importlib_resources
-    - simplejson >= 3.16.0
+    - simplejson >=3.16.0
     - psutil
 
 test:
