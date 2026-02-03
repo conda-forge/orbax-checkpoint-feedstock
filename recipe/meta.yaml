@@ -1,6 +1,6 @@
 {% set python_min = '3.10' %}
 {% set name = "orbax-checkpoint" %}
-{% set version = "0.8.0" %}
+{% set version = "0.11.32" %}
 
 package:
   name: {{ name|lower }}
@@ -12,8 +12,8 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
+  number: 0
 
 requirements:
   host:
@@ -26,14 +26,16 @@ requirements:
     - etils
     - typing_extensions
     - msgpack-python
-    - jax >=0.4.35
+    - jax >=0.6.0
     - numpy
     - pyyaml
-    - tensorstore >=0.1.60
+    - tensorstore >=0.1.74
     - nest-asyncio
     - protobuf
     - humanize
     - importlib_resources
+    - simplejson >= 3.16.0
+    - psutil
 
 test:
   imports:
