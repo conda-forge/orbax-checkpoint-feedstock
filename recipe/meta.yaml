@@ -1,6 +1,6 @@
 {% set python_min = '3.10' %}
 {% set name = "orbax-checkpoint" %}
-{% set version = "0.8.0" %}
+{% set version = "0.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/orbax_checkpoint-{{ version }}.tar.gz
-  sha256: 0754ecc2e5fc858e62bbcf610606502d8e1c9ada7295d9bb49cc172f884b0b1e
+  sha256: 16eac956ab827fefda47a31a66f76be305ab4eeb1fbe6672b844a85c2457333d
 
 build:
   noarch: python
@@ -21,15 +21,16 @@ requirements:
     - flit-core >=3.5,<4
     - pip
   run:
+    - simplejson >=3.16.0
     - python >={{ python_min }}
     - absl-py
     - etils
     - typing_extensions
     - msgpack-python
-    - jax >=0.4.35
+    - jax >=0.4.35,<0.4.36
     - numpy
     - pyyaml
-    - tensorstore >=0.1.60
+    - tensorstore >=0.1.68
     - nest-asyncio
     - protobuf
     - humanize
