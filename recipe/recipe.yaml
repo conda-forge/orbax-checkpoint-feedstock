@@ -11,6 +11,8 @@ package:
 source:
   url: https://pypi.org/packages/source/o/orbax-checkpoint/orbax_checkpoint-${{ version }}.tar.gz
   sha256: b4fd3fa861d109af48ed65d8ed45e5d9869784a752eadbd8022731cb37cb29b8
+  patches:
+    - use-jax.errors.JaxRuntimeError.patch
 
 build:
   number: 0

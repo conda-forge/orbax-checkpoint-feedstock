@@ -1,0 +1,37 @@
+From 8124892739f54a08cf4702f965459465702c867a Mon Sep 17 00:00:00 2001
+From: Matthew Feickert <matthew.feickert@cern.ch>
+Date: Tue, 17 Mar 2026 13:41:08 -0600
+Subject: [PATCH] fix: Use jax.errors.JaxRuntimeError
+
+* Avoid:
+  AttributeError: jax.lib.xla_extension.XlaRuntimeError has been removed; use
+  jax.errors.JaxRuntimeError instead.
+---
+ checkpoint/orbax/checkpoint/async_checkpointer.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/checkpoint/orbax/checkpoint/async_checkpointer.py b/checkpoint/orbax/checkpoint/async_checkpointer.py
+index 2df417c9..c0d3e51c 100644
+--- a/checkpoint/orbax/checkpoint/async_checkpointer.py
++++ b/checkpoint/orbax/checkpoint/async_checkpointer.py
+@@ -52,7 +52,7 @@ def _on_commit_callback(
+   )
+ 
+ 
+-def _add_deadline_exceeded_notes(e: jax.lib.xla_extension.XlaRuntimeError):
++def _add_deadline_exceeded_notes(e: jax.errors.JaxRuntimeError):
+   """Adds notes to the exception to help debug the deadline exceeded error."""
+   e.add_note('1. Make sure that the job and storage are colocated.')
+   e.add_note(
+@@ -159,7 +159,7 @@ class _AsyncManager:
+                   suffix=f'{directory.name}.{unique_operation_id}',
+               )
+           )
+-        except jax.lib.xla_extension.XlaRuntimeError as e:
++        except jax.errors.JaxRuntimeError as e:
+           if 'DEADLINE_EXCEEDED' in str(e):
+             _add_deadline_exceeded_notes(e)
+           raise
+-- 
+2.53.0
+
