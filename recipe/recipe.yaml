@@ -39,6 +39,7 @@ requirements:
     - aiofiles
     - simplejson >=3.16.0
     - psutil
+    - uvloop
 
 tests:
   - python:
