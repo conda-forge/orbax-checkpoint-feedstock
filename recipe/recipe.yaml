@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.9.0"
+  version: "0.11.32"
   python_min: "3.10"
 
 package:
@@ -10,14 +10,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/o/orbax-checkpoint/orbax_checkpoint-${{ version }}.tar.gz
-  sha256: b4fd3fa861d109af48ed65d8ed45e5d9869784a752eadbd8022731cb37cb29b8
+  sha256: 523dcf61e93c7187c6b80fd50f3177114c0b957ea62cbb5c869c0b3e3d1a7dfc
   patches:
     - use-jax.errors.JaxRuntimeError.patch
 
 build:
   number: 0
   noarch: python
-  script: ${{ PYTHON }} -m pip install . -vv
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
@@ -30,14 +30,16 @@ requirements:
     - etils
     - typing_extensions
     - msgpack-python
-    - jax >=0.4.35
+    - jax >=0.6.0
     - numpy
     - pyyaml
-    - tensorstore >=0.1.60
+    - tensorstore >=0.1.74
     - nest-asyncio
     - protobuf
     - humanize
     - importlib_resources
+    - simplejson >=3.16.0
+    - psutil
 
 tests:
   - python:
