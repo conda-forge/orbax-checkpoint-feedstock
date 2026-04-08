@@ -32,12 +32,14 @@ requirements:
     - numpy
     - pyyaml
     - tensorstore >=0.1.74
+    - importlib_resources
     - protobuf
     - humanize
     - aiofiles
     - simplejson >=3.16.0
     - psutil
     - uvloop
+
 tests:
   - python:
       imports:
