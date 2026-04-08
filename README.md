@@ -143,5 +143,6 @@ Feedstock Maintainers
 =====================
 
 * [@bwohlberg](https://github.com/bwohlberg/)
+* [@flferretti](https://github.com/flferretti/)
 * [@jan-janssen](https://github.com/jan-janssen/)
 
