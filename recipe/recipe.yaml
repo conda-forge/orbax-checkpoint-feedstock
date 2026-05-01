@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 0.11.36
+  version: 0.11.37
   python_min: '3.11'
 
 package:
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/o/orbax-checkpoint/orbax_checkpoint-${{ version }}.tar.gz
-  sha256: 60ed7084a9b79385fb5b9e4b05d98c2db6f5892d05ee8d82df680cfac1622312
+  sha256: 50f9a11830b2575d5a2291e7e67e3156ba2c249dcf0533140a7b7b6adc173c34
 
 build:
   number: 0
@@ -32,13 +32,13 @@ requirements:
     - numpy
     - pyyaml
     - tensorstore >=0.1.74
-    - importlib_resources
     - protobuf
     - humanize
     - aiofiles
     - simplejson >=3.16.0
     - psutil
     - uvloop
+    - grpcio-tools
 tests:
   - python:
       imports:
