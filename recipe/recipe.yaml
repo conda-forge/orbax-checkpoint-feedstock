@@ -31,7 +31,7 @@ requirements:
     - jax >=0.6.0
     - numpy
     - pyyaml
-    - tensorstore >=0.1.74
+    - tensorstore >=0.1.84
     - importlib_resources
     - protobuf
     - humanize
