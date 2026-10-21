@@ -47,7 +47,6 @@ tests:
       imports:
         - orbax.checkpoint
       pip_check: true
-      python_version: ${{ python_min }}.*
 
 about:
   summary: Orbax Checkpoint
