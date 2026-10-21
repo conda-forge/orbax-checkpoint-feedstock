@@ -1,8 +1,7 @@
 schema_version: 1
 
 context:
-  version: 0.12.7
-  python_min: '3.11'
+  version: 0.12.8
 
 package:
   name: orbax-checkpoint
@@ -10,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/o/orbax-checkpoint/orbax_checkpoint-${{ version }}.tar.gz
-  sha256: 96b352c3d017bf268a05977ea7677ce5af1faa728a99204ea3dc8157c6ce575a
+  sha256: fd9594cfc6dbd7881a8ce37ee9379b2a14c0e11ed49c774df1578c5ef4c6259a
 
 build:
   number: 0
@@ -42,10 +41,12 @@ requirements:
     - prometheus_client >=0.20.0
 tests:
   - python:
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
       imports:
         - orbax.checkpoint
       pip_check: true
-      python_version: ${{ python_min }}.*
 
 about:
   summary: Orbax Checkpoint
