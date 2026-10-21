@@ -2,7 +2,6 @@ schema_version: 1
 
 context:
   version: 0.12.8
-  python_min: '3.11'
 
 package:
   name: orbax-checkpoint
@@ -42,6 +41,9 @@ requirements:
     - prometheus_client >=0.20.0
 tests:
   - python:
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
       imports:
         - orbax.checkpoint
       pip_check: true
