@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 0.12.8
+  version: 0.12.10
 
 package:
   name: orbax-checkpoint
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/o/orbax-checkpoint/orbax_checkpoint-${{ version }}.tar.gz
-  sha256: fd9594cfc6dbd7881a8ce37ee9379b2a14c0e11ed49c774df1578c5ef4c6259a
+  sha256: 5e179a12e4cd3fedbadb07a1265949b8650726621f390a76105a50cd62edb1fa
 
 build:
   number: 0
@@ -24,14 +24,13 @@ requirements:
   run:
     - python >=${{ python_min }}
     - absl-py
-    - etils
+    - etils >=1.15.0
     - typing_extensions
     - msgpack-python
     - jax >=0.6.0
     - numpy
     - pyyaml
     - tensorstore >=0.1.84
-    - importlib_resources
     - protobuf
     - humanize
     - aiofiles
@@ -43,7 +42,7 @@ tests:
   - python:
       python_version:
         - ${{ python_min }}.*
-        - "*"
+        - '*'
       imports:
         - orbax.checkpoint
       pip_check: true
