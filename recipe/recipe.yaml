@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 0.12.10
+  version: "0.12.11"
 
 package:
   name: orbax-checkpoint
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/o/orbax-checkpoint/orbax_checkpoint-${{ version }}.tar.gz
-  sha256: 5e179a12e4cd3fedbadb07a1265949b8650726621f390a76105a50cd62edb1fa
+  sha256: 56aaaa358eb982342e21b70f8ea081068cc674830a3168010276873eb44da405
 
 build:
   number: 0
